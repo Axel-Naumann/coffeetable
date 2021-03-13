@@ -5,7 +5,7 @@
 Suppose you don't manage to have coffees with your colleagues.
 Maybe you even have new colleagues you don't even really know, because you never met them, you never hang out. 
 
-# 🧑‍🤝‍🧑
+# 👫👫👫
 
 This little tool allows you to split a larger team into small groups ("tables"), such that few people can chat, casually. 
 It makes sure the same people don't meet again all the time, and that tables are filled more or less equally.
