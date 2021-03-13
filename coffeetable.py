@@ -70,9 +70,9 @@ def build_cost_matrix(participants, history):
                     if qerson < person:
                         match = qerson + '+' + person
                     try:
-                        cost_matrix[match] += 1./(age + 1)
+                        cost_matrix[match] += 1./(1 << age)
                     except KeyError:
-                        cost_matrix[match] = 1./(age + 1)
+                        cost_matrix[match]  = 1./(1 << age)
     return cost_matrix
 
 
