@@ -8,7 +8,6 @@ Generate 2-3 person coffee table matches, preventing repititions.
 import json
 import math
 import random
-from names import names
 
 def parse_arguments():
     """
@@ -23,10 +22,11 @@ def parse_arguments():
                         help='Do not remember the new assignment')
     parser.add_argument('--history', default="coffeetable_hist.json",
                         help='Name of the file storing previous tables')
+    parser.add_argument('--test', action="store_true",
+                        help='Run the tests')
     args = parser.parse_args()
     # print(args)
-    return args.dry_run, args.max, args.history
-
+    return args.dry_run, args.max, args.history, args.test
 
 def write_history(filename, history):
     """
@@ -145,7 +145,13 @@ def coffeetable():
     - have max_persons_per_table - which can be a float, defining the number of tables
     - balance the number of participants per table
     """
-    dry_run, max_persons_per_table, hist_file = parse_arguments()
+    dry_run, max_persons_per_table, hist_file, test = parse_arguments()
+    if test:
+        from test.names import names
+        dry_run = True
+        hist_file = 'test/' + hist_file
+    else:
+        from names import names
     hist = read_history(hist_file)
     # print(json.dumps(hist))
     cost_matrix = build_cost_matrix(names, hist)
