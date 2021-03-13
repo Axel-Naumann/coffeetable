@@ -22,11 +22,13 @@ def parse_arguments():
                         help='Do not remember the new assignment')
     parser.add_argument('--history', default="coffeetable_hist.json",
                         help='Name of the file storing previous tables')
+    parser.add_argument('--retry', action="store_true",
+                        help="Retry a new distribution, replacing history's previous one by a new one.")
     parser.add_argument('--test', action="store_true",
                         help='Run the tests')
     args = parser.parse_args()
     # print(args)
-    return args.dry_run, args.max, args.history, args.test
+    return args.dry_run, args.max, args.history, args.retry, args.test
 
 def write_history(filename, history):
     """
@@ -145,7 +147,7 @@ def coffeetable():
     - have max_persons_per_table - which can be a float, defining the number of tables
     - balance the number of participants per table
     """
-    dry_run, max_persons_per_table, hist_file, test = parse_arguments()
+    dry_run, max_persons_per_table, hist_file, retry, test = parse_arguments()
     if test:
         from test.names import names
         dry_run = True
@@ -160,12 +162,16 @@ def coffeetable():
     tables = distribute(cost_matrix, names, max_persons_per_table)
     for itable, table in enumerate(tables):
         print(f'Table {itable + 1}: {" ".join(table)}')
-    hist.append([tables])
     if dry_run:
         print(f'Dry-run mode; not storing distribution in {hist_file}.')
     else:
+        if hist and retry:
+            # replace newest one
+            hist[0] = [tables]
+        else:
+            hist.insert(0, [tables])
         if len(hist) > 6:
-            hist = hist[-6:]
+            hist = hist[:6]
         write_history(hist_file, hist)
     return tables
 
