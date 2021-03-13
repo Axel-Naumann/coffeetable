@@ -88,8 +88,6 @@ def cost_for_participant(person, tables, cost_matrix, max_persons_per_table):
         if len(table) >= max_persons_per_table:
             continue
         cost = 0
-        if not table:
-            cost = -1
         for qerson in table:
             match = person + '+' + qerson
             if qerson < person:
@@ -100,6 +98,9 @@ def cost_for_participant(person, tables, cost_matrix, max_persons_per_table):
                 # print(f"cost {match}: {cost_matrix[match]}")
             except KeyError:
                 pass
+        # Vividly prefer or single-participant tables
+        if len(table) < 2:
+            cost -= 1
         # Favor rather empty tables
         cost -= 0.5/(1 + len(table))
         if cost > highest_table_cost:
