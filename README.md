@@ -1,9 +1,12 @@
 # Coffee Table! ☕
 
+It's a [web-app](https://axel-naumann.github.io/coffeetable/)!
+Home is at https://github.com/Axel-Naumann/coffeetable/
+
 # 😞
 
 Suppose you don't manage to have coffees with your colleagues.
-Maybe you even have new colleagues you don't even really know, because you never met them, you never hang out. 
+Maybe you have new colleagues you don't even really know, because you never met them, you never hang out. 
 
 # 👫👫👫
 
