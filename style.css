@@ -1,0 +1,49 @@
+h1 {
+    font-family: 'Lucida Grande';
+}
+
+#history {
+    display: none;
+    float: right;
+}
+
+#config {
+    margin: 1em;
+    border: 1px solid #ddd;
+    display: inline-table;
+    padding: 0.5em;
+}
+.cb {
+    margin-left: 4em;
+    margin-right: 0.5em;
+}
+#perTable {
+    width: 5em;
+
+}
+
+#gobtn {
+    width: 6em;
+    height: 3em;
+    font-weight: bolder;
+}
+
+#divpart {
+    margin: 1em;
+    line-height: 2em;
+}
+
+#tables {
+    border-collapse: collapse;
+}
+
+#tables td {
+    border: 1px solid #ddd;
+    padding: 0.2em 1em;
+}
+
+#results {
+    display: none;
+    margin: 1em;
+    line-height: 2em;
+}
