@@ -1,5 +1,19 @@
 h1 {
     font-family: 'Lucida Grande';
+    display: block;
+    width: 100%;
+    padding: 2em;
+    background-color: #5c2200;
+    color: white;
+    margin: 0px
+}
+
+body {
+    margin: 0px;
+}
+
+#input {
+    padding: 1em;
 }
 
 #history {
@@ -46,4 +60,9 @@ h1 {
     display: none;
     margin: 1em;
     line-height: 2em;
+}
+
+.emoji {
+    font-size:2em;
+    padding: 0em 1em;
 }

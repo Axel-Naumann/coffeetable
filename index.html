@@ -7,10 +7,11 @@
     <script src="coffeetable.js"></script>
   </head>
   <body>
-    <h1>Coffeetable!</h1>
+    <h1><span class="emoji">☕</span> Coffeetable! <span class="emoji">🛋</span></h1>
+    <div class="input">
     <form>
       <div id="divpart">
-        <label for="participants" id="labpart">Enter participants, prefix with <code>#</code> to comment:</label>
+        <label for="participants" id="labpart">Enter participants, prefix with <code>#</code> to exclude but remember:</label>
         <br/>
         <textarea id="participants" rows="20" cols="30" required="true" placeholder="Participants, one per line.&#10;# Prefix comments with '#'"></textarea>
         <textarea id="history" rows="20" cols="50"></textarea>
@@ -31,6 +32,7 @@
         </div>
       </div>
     </form>
+    </div>
     <div id="results">
       <caption for="tables">Proposed distribution of participants:</caption>
       <table id="tables"></table>
