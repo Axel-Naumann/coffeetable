@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
 h1 {
-    font-family: 'Lucida Grande';
+    font-family: 'Gochi Hand', cursive;
     display: block;
     width: 100%;
-    padding: 2em;
+    padding: 1em;
     background-color: #5c2200;
     color: white;
-    margin: 0px
+    margin: 0px 0px 1em 0px;
+    font-size: 3em;
 }
 
 body {
@@ -16,9 +18,13 @@ body {
     padding: 1em;
 }
 
-#history {
+#divhist {
     display: none;
-    float: right;
+}
+
+#divpart label {
+    margin-bottom: 0.5em;
+    display: block;
 }
 
 #config {
@@ -33,7 +39,6 @@ body {
 }
 #perTable {
     width: 5em;
-
 }
 
 #gobtn {
@@ -44,8 +49,15 @@ body {
 
 #divpart {
     margin: 1em;
-    line-height: 2em;
+    float: left;
+    min-width: 20em
 }
+
+#steer {
+    float: left;
+    min-width: 30em;
+}
+
 
 #tables {
     border-collapse: collapse;

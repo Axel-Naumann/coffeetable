@@ -1,4 +1,6 @@
 function update_show_hist() {
+  show_hist_cb = document.getElementById('show_hist');
+  historyEl = document.getElementById('divhist');
   if (show_hist_cb.checked) {
     historyEl.style.display = 'block';
   } else {
@@ -14,7 +16,6 @@ function init() {
     document.getElementById('history').value = window.localStorage.history;
   }
   show_hist_cb = document.getElementById('show_hist');
-  historyEl = document.getElementById('history');
 
   update_show_hist(); // reload might have it checked.
   show_hist_cb.addEventListener('input', update_show_hist);

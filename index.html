@@ -12,14 +12,13 @@
     <form>
       <div id="divpart">
         <label for="participants" id="labpart">Enter participants, prefix with <code>#</code> to exclude but remember:</label>
-        <br/>
-        <textarea id="participants" rows="20" cols="30" required="true" placeholder="Participants, one per line.&#10;# Prefix comments with '#'"></textarea>
-        <textarea id="history" rows="20" cols="50"></textarea>
+        <textarea id="participants" rows="20" cols="40" required="true" placeholder="Participants, one per line.&#10;# Prefix comments with '#'"></textarea>
+        <div id="divhist">
+          <label for="history" id="labhistory">Previous distributions (JSON-format):</label>
+          <textarea id="history" rows="20" cols="40"></textarea>
+        </div>
       </div>
-      <br/>
-      <br/>
       <div id="steer">
-        <button id="gobtn" onclick="return go()">Go!</button>
         <div id="config">
           <input id="perTable" type="number" value="2.7" step="0.1">
           <label for="perTable">Max participants per table</label><br/>
@@ -30,6 +29,7 @@
           <input type="checkbox" class="cb" id="show_hist">
           <label for="show_hist">Show / edit history</label>
         </div>
+        <button id="gobtn" onclick="return go()">Go!</button>
       </div>
     </form>
     </div>
